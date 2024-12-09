@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Book} from '../../core/book';
+
 
 @Component({
   selector: 'app-book-card',
@@ -9,6 +11,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BookCardComponent implements OnInit {
   authorStyle: string = 'red';
+  @Input() content!: Book;
 
   ngOnInit() {
     setTimeout(() => {
