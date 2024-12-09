@@ -1,8 +1,8 @@
 <h3>{{  content.title }}</h3>
-<h4 [class]="authorStyle">{{ content.author }}</h4>
-<a href="">Details</a>
-<p>
-  {{
-    content.abstract
-  }}
-</p>
+<h4>{{ content.author | uppercase | prefix:content.gender }}</h4>
+<h4>{{ content.publishDate | date: 'longDate' }}</h4>
+    <button
+       (click)="handleDetailClick($event)">
+        Details
+    </button>
+<div>{{content.abstract }}</div>
