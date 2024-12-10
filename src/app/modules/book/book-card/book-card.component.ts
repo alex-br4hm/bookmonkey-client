@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Book} from '../../core/book';
+import {Book} from '../../../core/models/book';
 import {DatePipe, UpperCasePipe} from "@angular/common";
 import {MatButtonModule} from "@angular/material/button";
-import {PrefixPipe} from "../../shared/utills/prefix.pipe";
+import {PrefixPipe} from "../../../shared/utills/prefix.pipe";
 
 
 @Component({
