@@ -29,9 +29,7 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => {
       this.books$ = this.bookApiService.getAll();
-    }, 3000)
   }
 
   navigateToDetail(book: Book) {

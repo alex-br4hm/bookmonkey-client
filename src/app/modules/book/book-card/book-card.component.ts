@@ -20,6 +20,7 @@ import {PrefixPipe} from "../../../shared/utills/prefix.pipe";
 export class BookCardComponent implements OnInit {
   @Input() content!: Book;
   @Output() detailClick = new EventEmitter<Book>();
+  detailsClicked: boolean = false;
 
   ngOnInit() {
   }
@@ -27,5 +28,7 @@ export class BookCardComponent implements OnInit {
   handleDetailClick(click: MouseEvent) {
     event!.preventDefault();
     this.detailClick.emit(this.content);
+    this.detailsClicked = !this.detailsClicked;
   }
+
 }
