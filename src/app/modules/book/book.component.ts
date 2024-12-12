@@ -6,6 +6,7 @@ import {RouterOutlet} from '@angular/router';
 import {BookApiService} from '../../core/services/book-api.service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-book',
@@ -22,29 +23,15 @@ import {Observable} from 'rxjs';
   styleUrl: './book.component.scss'
 })
 export class BookComponent implements OnInit {
-  books!: Book[];
-  noBooks!: TemplateRef<NgIfContext<Book>> | null;
-  bookApiTest!: Book[];
-  destroyRef = inject(DestroyRef)
   books$!: Observable<Book[]>;
 
   constructor(private bookApiService: BookApiService) {
   }
 
   ngOnInit() {
-    // this.bookApiService.getAll().pipe(
-    //   takeUntilDestroyed(this.destroyRef),
-    // ).subscribe({
-    //     next: (books: Book[]) => this.books = books,
-    //     error: (error: any) => console.error(error),
-    //     complete: () => {}
-    //     }
-    // );
-
     setTimeout(() => {
       this.books$ = this.bookApiService.getAll();
     }, 3000)
-
   }
 
   navigateToDetail(book: Book) {
