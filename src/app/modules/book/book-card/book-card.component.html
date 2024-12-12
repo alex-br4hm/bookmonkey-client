@@ -2,7 +2,7 @@
 <h4>{{ content.author | uppercase | prefix:content.gender }}</h4>
 <h4>{{ content.publishDate | date: 'longDate' }}</h4>
 <button
-  (click)="handleDetailClick($event); showDetails">
+  (click)="handleDetailClick($event);">
   Details
 </button>
 @if (detailsClicked) {
