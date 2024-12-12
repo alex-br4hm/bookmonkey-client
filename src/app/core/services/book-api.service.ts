@@ -84,7 +84,7 @@ export class BookApiService {
 
   }
 
-  getAll(): Observable<Book[]> {
+  getAll(): Observable<Book[]>{
     return of(this.books);
   }
 }
