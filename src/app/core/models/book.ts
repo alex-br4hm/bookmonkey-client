@@ -4,4 +4,7 @@ export interface Book {
   abstract: string;
   publishDate: Date;
   gender: string;
+  id: string;
+  isbn: string;
+  cover: string;
 }

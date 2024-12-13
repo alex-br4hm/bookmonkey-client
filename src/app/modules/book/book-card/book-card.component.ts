@@ -3,6 +3,7 @@ import {Book} from '../../../core/models/book';
 import {DatePipe, UpperCasePipe} from "@angular/common";
 import {MatButtonModule} from "@angular/material/button";
 import {PrefixPipe} from "../../../shared/utills/prefix.pipe";
+import {RouterLink} from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,8 @@ import {PrefixPipe} from "../../../shared/utills/prefix.pipe";
     UpperCasePipe,
     DatePipe,
     MatButtonModule,
-    PrefixPipe
+    PrefixPipe,
+    RouterLink
   ],
   templateUrl: './book-card.component.html',
   styleUrl: './book-card.component.scss'
