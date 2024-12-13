@@ -1,0 +1,24 @@
+.header-container {
+  height:10vh;
+  width: 100%;
+  background-color: #111;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.header-links {
+  display: flex;
+  gap:2em;
+  margin-right:5vh;
+  span {
+    font-size: 1.5em;
+    opacity: .85;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

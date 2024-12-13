@@ -7,6 +7,7 @@ import {BookApiService} from '../../core/services/book-api.service';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {HeaderComponent} from '../../core/components/header/header.component';
 
 @Component({
   selector: 'app-book',
@@ -16,7 +17,8 @@ import {HttpClient} from '@angular/common/http';
     NgForOf,
     NgIf,
     RouterOutlet,
-    AsyncPipe
+    AsyncPipe,
+    HeaderComponent
   ],
   providers: [BookApiService],
   templateUrl: './book.component.html',

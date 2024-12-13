@@ -1,10 +1,10 @@
 :host {
   display: inline-block;
-
   border-radius: 2px;
   margin:1rem;
   padding:2.5rem;
   width:30%;
+  max-width:300px;
   background-color: #222;
   transition: all .3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
@@ -16,6 +16,12 @@
 @media screen and (max-width:1024px) {
   :host {
     width: 45%;
+  }
+}
+
+@media screen and (max-width:620px) {
+  :host {
+    width: 80%;
   }
 }
 
