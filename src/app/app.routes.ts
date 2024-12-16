@@ -1,13 +1,43 @@
 import { Routes } from '@angular/router';
-import { BookComponent } from './modules/book/book.component';
-import {NotFoundComponent} from './core/components/not-found/not-found.component';
-import {BookDetailComponent} from './modules/book/book-detail/book-detail.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'books', pathMatch: 'full'},
-  {path: 'books', component: BookComponent},
-  {path: 'books/:id', component: BookDetailComponent},
-  {path: 'home', component: BookComponent},
-  {path: 'other', component: BookComponent},
-  {path: '**', component: NotFoundComponent}
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
+
+  {
+    path: 'books',
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./modules/book/book.component').then(m => m.BookComponent),
+      },
+      {
+        path: ':id',
+        loadComponent: () =>
+          import('./modules/book/book-detail/book-detail.component').then(
+            m => m.BookDetailComponent
+          ),
+      },
+    ],
+  },
+
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./modules/book/book.component').then(m => m.BookComponent),
+  },
+
+  {
+    path: 'other',
+    loadComponent: () =>
+      import('./modules/book/book.component').then(m => m.BookComponent),
+  },
+
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./core/components/not-found/not-found.component').then(
+        m => m.NotFoundComponent
+      ),
+  },
 ];

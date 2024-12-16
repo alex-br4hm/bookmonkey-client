@@ -28,5 +28,8 @@ export class BookDetailComponent implements OnInit {
     this.book$ = this.route.params.pipe(
       switchMap((params: Params) => this.bookApiService.getDetail(params['id']))
     )
+
+    console.log('hello?', this.book$)
   }
+
 }
