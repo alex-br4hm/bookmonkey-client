@@ -12,6 +12,7 @@ import {AsyncPipe, NgIf} from '@angular/common';
     AsyncPipe,
     NgIf
   ],
+
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.scss'
 })

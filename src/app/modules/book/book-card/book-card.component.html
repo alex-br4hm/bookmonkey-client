@@ -3,8 +3,7 @@
 <h4>{{ content.publishDate | date: 'longDate' }}</h4>
 <button
   (click)="handleDetailClick($event);"
-  [routerLink]="['/books', content.id]"
->
+  [routerLink]="['/books', content.id]">
   Details
 </button>
 

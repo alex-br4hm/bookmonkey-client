@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {canLeaveGuard} from './core/guards/can-leave.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'books', pathMatch: 'full' },
@@ -13,6 +14,7 @@ export const routes: Routes = [
       },
       {
         path: ':id',
+        canDeactivate: [ canLeaveGuard ],
         loadComponent: () =>
           import('./modules/book/book-detail/book-detail.component').then(
             m => m.BookDetailComponent
