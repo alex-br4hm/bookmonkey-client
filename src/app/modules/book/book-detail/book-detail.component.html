@@ -1,4 +1,5 @@
-@if (book) {
+<ng-container *ngIf="book$ | async as book">
+
   <div class="book-detail-container">
     <div class="book-info-wrapper">
       <h2> {{ book.title }} </h2>
@@ -9,5 +10,5 @@
       <img src="{{ book.cover }}" alt="">
     </div>
   </div>
-}
 
+</ng-container>
