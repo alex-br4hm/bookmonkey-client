@@ -12,6 +12,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./modules/book/book.component').then(m => m.BookComponent),
       },
+
       {
         path: ':id',
         canDeactivate: [ canLeaveGuard ],
@@ -21,6 +22,12 @@ export const routes: Routes = [
           ),
       },
     ],
+  },
+
+  {
+    path: 'add-book',
+    loadComponent: () =>
+      import('./modules/book/new-book/new-book.component').then(m => m.NewBookComponent),
   },
 
   {
